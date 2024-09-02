@@ -18,7 +18,7 @@ const DownloadItem = ({
 }: DownloadItemProps) => {
   return (
     <div
-      className={`flex justify-between px-6 py-2 text-base text-white cursor-pointer duration-500 border-y ${
+      className={`flex justify-between px-6 py-2 text-base text-white cursor-pointer duration-500 border-y hover:bg-[#370c9d3c] ${
         isSelected === id
           ? "bg-[#380C9D] bg-opacity-45 border-[#380C9D]"
           : "border-[#2C2538]"

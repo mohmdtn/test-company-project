@@ -23,7 +23,7 @@ const DownloadDialog = ({ open, handleClose }: DownloadDialogProps) => {
   const [isActive, setIsActive] = useState(6);
   return (
     <Dialog onClose={handleClose} open={open} className="bg-none border-none">
-      <section className=":w-[17rem] bg-gradient-to-r from-[#391A48] to-[#1C1A26] text-white rounded-[1.25rem] border-2 border-[#380C9D] overflow-hidden">
+      <section className="w-[17rem] bg-gradient-to-r from-[#391A48] to-[#1C1A26] text-white rounded-[1.25rem] border-2 border-[#380C9D] overflow-hidden">
         {/* Modal Header */}
         <h4 className="text-[#DFE1F9] px-3 py-5 text-lg text-center border-b border-[#2C2538] font-bold">
           Select the subtitle format
