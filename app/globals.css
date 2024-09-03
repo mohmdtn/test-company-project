@@ -17,3 +17,7 @@ body {
   background: none;
   box-shadow: none;
 }
+
+.MuiTooltip-tooltip {
+  background-color: #ffffff00 !important;
+}
