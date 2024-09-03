@@ -33,11 +33,15 @@ interface TooltipCustomProps {
 
 const TooltipCustom = ({ children }: TooltipCustomProps) => {
   const [isShowMore, setIsShowMore] = useState(false);
+  const [isBookMarked, setIsBookMarked] = useState(false);
 
   return (
     <Tooltip
       title={
-        <section className="w-full md:w-[21.625rem] text-white rounded-[1.25rem] bg-[#231F2F] shadow-md shadow-gray-500 px-2 py-3 h-min">
+        <section
+          onMouseLeave={() => setIsShowMore(false)}
+          className="w-full md:w-[21.625rem] text-white rounded-[1.25rem] bg-[#231F2F] shadow-md shadow-gray-500 px-2 py-3 h-min"
+        >
           {/* Head Of Tooltip */}
           <div className="flex gap-2 flex-col sm:flex-row justify-between px-5">
             <div className="flex items-center gap-1">
@@ -49,13 +53,22 @@ const TooltipCustom = ({ children }: TooltipCustomProps) => {
 
             <div className="flex items-center gap-3">
               <RiVolumeUpFill size={25} className="cursor-pointer" />
-              <FaRegBookmark size={22} className="cursor-pointer" />
+              <div onClick={() => setIsBookMarked((prev) => !prev)}>
+                {isBookMarked ? (
+                  <FaBookmark
+                    size={22}
+                    className="cursor-pointer text-[#6157C8]"
+                  />
+                ) : (
+                  <FaRegBookmark size={22} className="cursor-pointer" />
+                )}
+              </div>
             </div>
           </div>
 
           {/* Less Content */}
           <p
-            className={`text-[#CBCBCB] text-sm my-3 ps-5 pe-8 ${
+            className={`text-[#CBCBCB] text-sm my-3 ps-5 pe-8 duration-500 ${
               !isShowMore ? "max-h-[100vh] opacity-100" : "max-h-0 opacity-0"
             }`}
           >
